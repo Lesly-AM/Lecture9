@@ -1,6 +1,8 @@
 
 #include <iostream>
+#include <vector>
 #include <string>
+#include <fstream>
 
 int main()
 {
@@ -62,4 +64,35 @@ int main()
             git remote add origin (origin is an alias, you can use whatever - use github) https://github.com/Lesly-AM/Lecture9.git - actually does the connection from the machine to your github
             git push -u origin main - uolaods your current version of the project (timestamp 30:50)]
         */
+    
+    //Possibly File IO
+
+    //create and open a text file
+
+    std::ofstream MyFile("file.txt");
+
+    //write to file
+
+    MyFile << "Hello World!";
+
+    //close the file
+    MyFile.close();
+
+    
+    
+    //read from text file
+
+    //create a string which is used to output the text file
+
+    std::string readFile;
+
+    //read the file and assign the string the files text
+
+    std::ifstream MyReadFile("file.txt");
+
+    //use a while loop together with the getline() fcn to read the file line by line
+
+    while (std::getline(MyReadFile, readFile)) {
+        std::cout << readFile << std::endl;
+    }
 }
